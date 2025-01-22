@@ -1,0 +1,71 @@
+{
+  "structure": {
+    "directories": [
+      "src/pages",
+      "src/components"
+    ],
+    "files": [
+      "src/pages/Home.tsx",
+      "src/App.tsx"
+    ]
+  },
+  "components": [
+    {
+      "name": "Home",
+      "type": "page",
+      "location": "src/pages/Home.tsx",
+      "children": ["Navbar", "ImageCarousel", "Features"]
+    },
+    {
+      "name": "Navbar",
+      "type": "component",
+      "location": "src/pages/Home.tsx",
+      "hooks": ["useTheme"],
+      "uiComponents": ["Button"],
+      "icons": ["Sun", "Moon"]
+    },
+    {
+      "name": "ImageCarousel",
+      "type": "component",
+      "location": "src/pages/Home.tsx",
+      "uiComponents": ["Carousel", "CarouselContent", "CarouselItem", "CarouselPrevious", "CarouselNext", "AspectRatio"]
+    },
+    {
+      "name": "Features",
+      "type": "component",
+      "location": "src/pages/Home.tsx",
+      "uiComponents": ["Card", "CardHeader", "CardTitle", "CardDescription", "CardContent"],
+      "animations": ["motion"]
+    }
+  ],
+  "hooks": ["useTheme"],
+  "uiComponentsUsed": [
+    "Button",
+    "Carousel",
+    "Card",
+    "AspectRatio"
+  ],
+  "animations": [
+    {
+      "library": "framer-motion",
+      "components": ["motion.div"],
+      "effects": ["fade", "slide", "scale"]
+    }
+  ],
+  "styling": {
+    "framework": "Tailwind CSS",
+    "features": [
+      "Responsive design",
+      "Dark/light theme support",
+      "Backdrop filters"
+    ]
+  },
+  "icons": {
+    "library": "lucide-react",
+    "icons": ["Sun", "Moon"]
+  },
+  "routes": {
+    "main": "/",
+    "singlePage": true
+  }
+}
