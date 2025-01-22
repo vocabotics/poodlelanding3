@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { useTheme } from './components/theme-provider';
+import { useTheme } from '@/components/theme-provider';
 import { Sun, Moon } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
