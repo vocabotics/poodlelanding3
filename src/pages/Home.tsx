@@ -6,27 +6,36 @@ import { useTheme } from '@/components/theme-provider';
 import { Sun, Moon } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-const ImageCarousel = () => (
-  <Carousel className="w-full max-w-5xl mx-auto">
-    <CarouselContent>
-      {[1, 2, 3].map((index) => (
-        <CarouselItem key={index}>
-          <div className="p-1">
-            <AspectRatio ratio={16/9}>
-              <img
-                src={`/images/poodle-${index}.jpg`}
-                alt={`Poodle ${index}`}
-                className="rounded-lg object-cover w-full h-full"
-              />
-            </AspectRatio>
-          </div>
-        </CarouselItem>
-      ))}
-    </CarouselContent>
-    <CarouselPrevious />
-    <CarouselNext />
-  </Carousel>
-);
+const ImageCarousel = () => {
+  const unsplashImages = [
+    'hXrYDrkX7XQ', // Standard poodle in park
+    '5gGcn5PR1pU', // White poodle portrait
+    '9u7aXo_YYLk'  // Poodle sitting
+  ];
+
+  return (
+    <Carousel className="w-full max-w-5xl mx-auto">
+      <CarouselContent>
+        {unsplashImages.map((id) => (
+          <CarouselItem key={id}>
+            <div className="p-1">
+              <AspectRatio ratio={16/9}>
+                <img
+                  src={`https://source.unsplash.com/${id}/1600x900`}
+                  alt="Poodle from Unsplash"
+                  className="rounded-lg object-cover w-full h-full"
+                  loading="lazy"
+                />
+              </AspectRatio>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  );
+};
 
 const Navbar = () => {
   const { setTheme, theme } = useTheme();
